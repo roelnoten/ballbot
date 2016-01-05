@@ -1,0 +1,26 @@
+/* Common styles for Evothings examples and client. */
+
+@import '../fonts/ProximaNova.css';
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Proxima Nova Regular', sans-serif;
+	font-weight: normal;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+@media	screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio : 2),
+		screen and (orientation: landscape) and (min--moz-device-pixel-ratio: 2),
+		screen and (orientation: landscape) and (min-device-pixel-ratio : 2) {
+	body { font-size: 4.5vw; }
+}

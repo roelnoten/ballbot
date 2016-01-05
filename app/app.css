@@ -1,0 +1,312 @@
+
+html {
+    /*carbon */
+    background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+
+    /* circles in circles */
+    /*background-color:#222;*/
+    /*background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,1) 99%), radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.6) 99%);*/
+    /*background-size:50px 50px;*/
+    /*background-position:0 0, 25px 25px;*/
+
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.title-3d {
+    font-family: 'Proxima Nova Bold';
+    /*text-align: center;*/
+    margin-top: -10px;
+    display: inline-block;
+    font-size: 40pt;
+    font-weight: 900;
+    transform: scaleX(1.5);
+    margin-left: 109px;
+    width: 210px;
+}
+
+.title-3d a {
+    text-decoration: none;
+    color: #111;
+    position: absolute;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.4)), to(rgba(0,0,0,1)));
+}
+
+.title-3d:after {
+    content : 'BallBot';
+    color: #d6d6d6;
+    text-shadow: 0px 0px 1px #000, 1px 1px 0px rgba(0, 191, 255, 0.7), 0px 0px 6px #000;
+}
+
+input {
+    background: #666;
+    color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    height: 22px;
+    margin: 0px;
+    line-height: 22px;
+}
+
+button {
+    margin: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: #666;
+    color: #fff;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,.5)), to(rgba(0,0,0,1)));
+    height: 30px;
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    border-radius: 6px;
+}
+
+button:active {
+    border-color: orange;
+    background: rgba(0, 191, 255, 0.7);
+}
+
+.buttonbar button {
+    margin-top: 4px;
+    vertical-align: top;
+    height: 36px;
+    width: 36px;
+}
+
+#notconnectedscreen {
+    font-size: 12px;
+}
+
+#singleordualbutton {
+    float: right;
+    padding: 0px;
+}
+#singleordualbutton div {
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    font-weight: 900;
+    font-size: 18px;
+    vertical-align: super;
+    color: rgba(0, 191, 255, 0.7);
+    /*padding: 1px;*/
+    margin-left: -1px;
+}
+.single #singleordualright {
+    display: none;
+}
+
+#colorbutton {
+    float: right;
+    padding: 0px;
+}
+#colorbutton div {
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    font-weight: 900;
+    font-size: 18px;
+    vertical-align: super;
+    margin-left: -1px;
+}
+
+.rotation #colorleft:after {
+    content: '\21BB';
+    color: #4f4;
+}
+
+.rotation #colorright:after {
+    content: '\21BA';
+    color: #f22;
+}
+
+.balance #colorleft:after {
+    content: '\25D2';
+    color: #4f4;
+}
+
+.balance #colorright:after {
+    content: '\25D2';
+    color: #f22;
+}
+
+#soundbutton {
+    float: right;
+    padding: 2px;
+    font-size: 25px;
+    text-align: center;
+    padding-right: 2px;
+}
+.soundon {
+    color: rgba(0, 191, 255, 0.7);
+}
+.soundoff {
+    color: #222;
+}
+
+#leftright {
+    border: 10px solid rgba(0, 191, 255, 0.2);
+    border-radius: 1000px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 250px;
+    width: 240px;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    /*display: none;*/
+}
+
+#updown {
+    border: 10px solid rgba(0, 191, 255, 0.2);
+    border-radius: 1000px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 240px;
+    width: 250px;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
+
+#leftrightupdown {
+    border: 10px solid rgba(0, 191, 255, 0.2);
+    border-radius: 1000px;
+    position: absolute;
+    bottom: -2px;
+    right: 0px;
+    height: 240px;
+    width: 240px;
+}
+
+.displaynone {
+    display: none;
+}
+
+#connectedscreen {
+    position:absolute;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    top: 45px;
+}
+
+#colorscreen {
+    position:absolute;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    top: 45px;
+}
+
+#colorwheelcanvas {
+    top: 12px;
+    left: 19px;
+    position: absolute;
+}
+
+#colortouserbutton {
+    font-weight: 900;
+    font-size: 18px;
+    position: absolute;
+    top: 91px;
+    left: 93px;
+    height: 93px;
+    width: 93px;
+    border-radius: 100px;
+    border: 10px solid black;
+    -webkit-mask-image: none;
+    text-align: center;
+    padding: 0px;
+    vertical-align: sub;
+    padding-top: 5px;
+}
+
+#colortobalancebutton {
+    position: absolute;
+    top: 100px;
+    right: 29px;
+    font-size: 18px;
+    width: 220px;
+}
+
+#colortorotationbutton {
+    position: absolute;
+    top: 140px;
+    right: 29px;
+    font-size: 18px;
+    width: 220px;
+}
+
+#temperature {
+    font-size: 15px;
+    width: 70px;
+    height: 20px;
+    text-align: center;
+    position:absolute;
+    left: 249px;
+    top: 5px;
+}
+
+#battery {
+    font-size: 15px;
+    width: 70px;
+    height: 20px;
+    text-align: center;
+    position:absolute;
+    left: 249px;
+    top: 23px;
+}
+
+#horizontalstats {
+    font-size: 15px;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    position:absolute;
+    left: 249px;
+    bottom: 2px;
+}
+
+#verticalstats {
+    font-size: 15px;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    position:absolute;
+    left: 249px;
+    bottom: 20px;
+}
+
+#debug {
+    font-size: 10px;
+    width: 500px;
+    height: 15px;
+    text-align: left;
+    position:absolute;
+    left: 0px;
+    top: 0px;
+    color: #777;
+}
+
+#acceleration {
+    font-size: 10px;
+    width: 500px;
+    height: 33px;
+    text-align: left;
+    position:absolute;
+    left: 0px;
+    bottom: 0px;
+    color: #777;
+}
+
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+
+    <title>BallBot</title>
+
+    <style>
+        @import 'ui/css/evothings-app.css';
+        @import 'app.css';
+    </style>
+
+    <script>
+        // Redirect console.log to Evothings Workbench.
+        if (window.hyper && window.hyper.log) {
+            console.log = hyper.log
+        }
+    </script>
+
+    <script src="cordova.js"></script>
+    <script src="libs/evothings/evothings.js"></script>
+    <script src="libs/evothings/easyble/easyble.js"></script>
+    <script src="libs/nipplejs/nipplejs-v0.6.1.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body ontouchstart="">
+
+<!-- unicode characters:
+        http://www.w3schools.com/charsets/ref_utf_geometric.asp
+        http://www.w3schools.com/charsets/ref_utf_symbols.asp
+        http://unicode-table.com/en/sets/arrows-symbols/
+-->
+
+<div class="buttonbar">
+    <button onclick="app.back()">&#9166;</button>
+
+    <div class="title-3d"><a href="#">BallBot</a></div>
+
+    <button id="colorbutton" class="rotation" onclick="app.toggleColor()">        <!-- usercolor, balance or rotation -->
+        <div id="colorleft"></div><div id="colorright"></div>
+    </button>
+
+    <button id="soundbutton" class="soundon" onclick="app.toggleSound()">        <!-- soundon or soundoff -->
+        <div style="margin-top: -2px">&#9835;</div>
+    </button>
+
+    <button id="singleordualbutton" class="dual" onclick="app.toggleSingleOrDual()">                                   <!-- single or dual -->
+        <div id="singleordualleft">&#10687;</div><div id="singleordualright">&#10687;</div>  <!--&#9711;-->
+    </button>
+</div>
+
+
+<div id="notconnectedscreen">
+    <center>
+        <input id="BLEId" value="Bean" type="url" style="margin:40px; width: 100px">
+        <br/>
+        <button id="connectbutton" style="width: 150px" onclick="app.connect()">Connect</button>
+        <br/>
+        <br/>
+        <b>Status:</b> <span id="status">Not connected</span>
+    </center>
+</div>
+
+<div id="connectedscreen">
+    <div id="updown">
+
+    </div>
+
+    <div id="leftright">
+
+    </div>
+
+    <div id="leftrightupdown">
+
+    </div>
+
+    <div id="temperature">&#127777; ?? &#8451;</div>
+    <div id="battery">&#128267; ?? %</div>
+    <div id="verticalstats">&#8661;0</div>
+    <div id="horizontalstats">&#8660;0</div>
+    <div id="debug">debug</div>
+    <div id="acceleration"><br><br>acceleration</div>
+</div>
+
+<div id="colorscreen">
+    <canvas id="colorwheelcanvas" class="colorwheel" width="250" height="250"></canvas>
+
+    <button id="colortouserbutton" onclick="app.toggleColor('user')">
+        <div style="margin-top: -2px">&#x25C9;&#x25C9;</div>
+    </button>
+
+    <button id="colortobalancebutton" onclick="app.toggleColor('balance')">
+        <span style="color: #4f4">&#x25D2;</span><span style="color: #f22">&#x25D2;</span> Balance
+    </button>
+
+    <button id="colortorotationbutton" onclick="app.toggleColor('rotation')">
+        <span style="color: #4f4">&#x21BB;</span><span style="color: #f22">&#x21BA;</span> Wheel Rotation
+    </button>
+
+
+</div>
+
+<!--
+   <div id="temperatureDisplay" style="display:none">
+        <hr>
+        <p class="topic">Temperature</p>
+
+        <p class="temperatureLabel"><span id="temperature">N/A</span> C&deg;</p>
+    </div>
+
+    <div id="ledControl" style="display:none">
+        <hr>
+
+        <p class="topic">LED control</p>
+
+        <input type="range" id="redLed" min="0" max="255" step="1" value="0" onchange="app.sendLedUpdate()"><br>
+        <input type="range" id="greenLed" min="0" max="255" step="1" value="0" onchange="app.sendLedUpdate()"><br>
+        <input type="range" id="blueLed" min="0" max="255" step="1" value="0" onchange="app.sendLedUpdate()"><br>
+
+    </div>
+    -->
+
+<script>app.initGui()</script>
+</body>
+
+</html>
